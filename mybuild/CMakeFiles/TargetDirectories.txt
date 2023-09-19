@@ -1,8 +1,0 @@
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/CMakeFiles/edit_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-server/CMakeFiles/chaterminal_server.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-server/CMakeFiles/edit_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-server/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-client/CMakeFiles/chaterminal_client.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-client/CMakeFiles/edit_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal/mybuild/chaterminal-client/CMakeFiles/rebuild_cache.dir

@@ -1,6 +1,0 @@
-/chaterminal-server/cmake-build-debug/
-/chaterminal-client/cmake-build-debug/
-/chaterminal-server/.idea/
-/chaterminal-client/.idea/
-./cmake-build-debug
-./.*
