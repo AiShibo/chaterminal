@@ -1,3 +1,0 @@
-/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/CMakeFiles/chaterminal_client.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
