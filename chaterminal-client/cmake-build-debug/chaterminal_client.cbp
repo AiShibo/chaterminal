@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="chaterminal_client"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chaterminal_client">
+				<Option output="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/chaterminal_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add directory="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 chaterminal_client"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chaterminal_client/fast">
+				<Option output="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/chaterminal_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add directory="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 chaterminal_client/fast"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j32 -f &quot;/mnt/c/Users/asnic/CLionProjects/chaterminal-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/callback/auth_cb.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/callback/chat_cb.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/callback/event_cb.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/callback/user_cb.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/auth_cb.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/chat_cb.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/defines.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/event_cb.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/get_serv_msg.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/process_response.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/server_connect_service.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/include/user_cb.h">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/main.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/service/server_connect_service.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/util/get_serv_msg.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/util/process_response.c">
+			<Option target="chaterminal_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/asnic/CLionProjects/chaterminal-client/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

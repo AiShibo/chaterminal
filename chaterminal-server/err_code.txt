@@ -1,0 +1,3 @@
+
+NO_CREDENT: please provide a username and password!
+WRONG_CREDENT: incorrect username/password, please try again!
