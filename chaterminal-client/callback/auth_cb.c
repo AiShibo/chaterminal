@@ -4,7 +4,7 @@
 
 #include "auth_cb.h"
 
-void request_auth(struct bufferevent *event, void *data) {;
+void request_auth(struct bufferevent *event, void *data) {
     char *serv_message = read_bufferevent_string(event);
     if (serv_message == NULL) {
         return;

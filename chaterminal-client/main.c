@@ -38,6 +38,64 @@ void init_terminal(struct termios *oldt) {
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 }
 
+void process_user_input(char ch, int *idx, char *message, const char *username) {
+    if (ch == '\n') {  // Enter key
+        // Remove trailing newline, if any
+        pthread_mutex_lock(&client_msg_mutex);
+        terminal_user_input[*idx] = '\0';
+        pthread_mutex_unlock(&client_msg_mutex);
+
+
+        // Append the user's message
+        pthread_mutex_lock(&client_msg_mutex);
+        strncat(message, terminal_user_input, sizeof(message) - strlen(message) - 1);
+        pthread_mutex_unlock(&client_msg_mutex);
+        strncat(message, END_MARKER, sizeof(message) - strlen(message) - 1);
+
+        // Here you would send `message` to its destination using bufferevent_write()
+        // For demonstration, just printing it
+
+        bufferevent_write(event, message, strlen(message));
+        printf("\033[2K\r");
+        pthread_mutex_lock(&client_msg_mutex);
+        printf("%s\n", terminal_user_input);
+        pthread_mutex_unlock(&client_msg_mutex);
+
+        printf("\033[2K\r");
+        // printf("chat <%s> > ", username);
+        fflush(stdout);
+
+        // Reset message and terminal_user_input for next iteration
+        strncpy(message, "SENDMSG\n", 8);
+        message[8] = '\0';
+        strncat(message, username, sizeof(message) - strlen(message) - 1);
+        strncat(message, "\n", sizeof(message) - strlen(message) - 1);
+        pthread_mutex_lock(&client_msg_mutex);
+        memset(terminal_user_input, 0, sizeof(terminal_user_input));
+        pthread_mutex_unlock(&client_msg_mutex);
+        *idx = 0;
+
+    } else if (ch == 8 || ch == 127) {  // Delete or Backspace
+        if (*idx > 0 && !stop) {
+            pthread_mutex_lock(&client_msg_mutex);
+            terminal_user_input[--(*idx)] = '\0';
+            printf("\033[2K\r");
+            printf("chat <%s> > %s", username, terminal_user_input);
+            pthread_mutex_unlock(&client_msg_mutex);
+        }
+    } else {  // Regular character
+        if (!stop) {
+            pthread_mutex_lock(&client_msg_mutex);
+            terminal_user_input[(*idx)++] = ch;
+            terminal_user_input[(*idx)] = '\0';  // Null-terminate
+
+            printf("\033[2K\r");
+            printf("chat <%s> > %s", username, terminal_user_input);
+            pthread_mutex_unlock(&client_msg_mutex);
+        }
+    }
+}
+
 void prompt_for_chat(const char *username) {
     struct termios oldt;
     char ch;
@@ -66,72 +124,20 @@ void prompt_for_chat(const char *username) {
 
         // Read a character
         if ((read(STDIN_FILENO, &ch, 1) > 0) && !stop) {
-            if (ch == '\n') {  // Enter key
-                // Remove trailing newline, if any
-                pthread_mutex_lock(&client_msg_mutex);
-                terminal_user_input[idx] = '\0';
-                pthread_mutex_unlock(&client_msg_mutex);
-
-
-                // Append the user's message
-                pthread_mutex_lock(&client_msg_mutex);
-                strncat(message, terminal_user_input, sizeof(message) - strlen(message) - 1);
-                pthread_mutex_unlock(&client_msg_mutex);
-                strncat(message, END_MARKER, sizeof(message) - strlen(message) - 1);
-
-                // Here you would send `message` to its destination using bufferevent_write()
-                // For demonstration, just printing it
-
-                bufferevent_write(event, message, strlen(message));
-                printf("\033[2K\r");
-                pthread_mutex_lock(&client_msg_mutex);
-                printf("%s\n", terminal_user_input);
-                pthread_mutex_unlock(&client_msg_mutex);
-
-                printf("\033[2K\r");
-                // printf("chat <%s> > ", username);
-                fflush(stdout);
-
-                // Reset message and terminal_user_input for next iteration
-                strncpy(message, "SENDMSG\n", 8);
-                message[8] = '\0';
-                strncat(message, username, sizeof(message) - strlen(message) - 1);
-                strncat(message, "\n", sizeof(message) - strlen(message) - 1);
-                pthread_mutex_lock(&client_msg_mutex);
-                memset(terminal_user_input, 0, sizeof(terminal_user_input));
-                pthread_mutex_unlock(&client_msg_mutex);
-                idx = 0;
-
-            } else if (ch == 8 || ch == 127) {  // Delete or Backspace
-                if (idx > 0 && !stop) {
-                    pthread_mutex_lock(&client_msg_mutex);
-                    terminal_user_input[--idx] = '\0';
-                    printf("\033[2K\r");
-                    printf("chat <%s> > %s", username, terminal_user_input);
-                    pthread_mutex_unlock(&client_msg_mutex);
-                }
-            } else {  // Regular character
-                if (!stop) {
-                    pthread_mutex_lock(&client_msg_mutex);
-                    terminal_user_input[idx++] = ch;
-                    terminal_user_input[idx] = '\0';  // Null-terminate
-
-                    printf("\033[2K\r");
-                    printf("chat <%s> > %s", username, terminal_user_input);
-                    pthread_mutex_unlock(&client_msg_mutex);
-                }
-            }
+            process_user_input(ch, &idx, message, username);
         }
     }
 
     // Restore terminal settings
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+
 }
 
 static void sigint_cb(evutil_socket_t sig, short events, void *user_data) {
     event_base_loopbreak(base);
     pthread_join(chat_thread, NULL);
     stop = 1;
+    printf("\nexited! press any key to back to menu!\n");
 }
 
 

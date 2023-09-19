@@ -37,6 +37,11 @@ void authentication(struct bufferevent *event, void *data) {
                     break;
                 }
                 if (check_credent(username, password)) {
+                    struct bufferevent *prev_bev = get_bev_by_username(username);
+                    if (prev_bev != NULL) {
+                        bufferevent_free(prev_bev);
+                        remove_credent(username);
+                    }
                     send_success("CORRECT_CREDENT\n", event);
                     char *mall_username = strdup(username);
                     bufferevent_setcb(event, serv_dispatch, NULL, event_cb, mall_username);
