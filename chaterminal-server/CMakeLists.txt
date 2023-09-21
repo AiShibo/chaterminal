@@ -1,3 +1,12 @@
+# Minimum CMake version required
+cmake_minimum_required(VERSION 3.22)
+
+# Project name and language
+project(chaterminal C)
+
+# Set C standard to use
+set(CMAKE_C_STANDARD 11)
+
 # Add include directories
 include_directories(include)
 
@@ -17,6 +26,7 @@ add_executable(chaterminal_server main.c
         utils/client_msg.c
         dao/chat_dao.c
         service/sendmsg_service.c
+        include/settings.h
 )
 
 # Link libraries

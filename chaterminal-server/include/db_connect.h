@@ -8,6 +8,7 @@
 #include <mysql/mysql.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "settings.h"
 
 int db_connect();
 int init_stmt();

@@ -3,9 +3,7 @@
 #include "auth.h"
 #include "connection.h"
 #include "init_service.h"
-
-#define PORT 6324
-
+#include "settings.h"
 
 
 int main(int argc, char **argv) {

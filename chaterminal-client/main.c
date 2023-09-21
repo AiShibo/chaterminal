@@ -203,12 +203,10 @@ void handle_show_users() {
 }
 
 void handle_add_user() {
-    // TODO: Implement your logic for adding a user here
     printf("You chose to add a user\n");
 }
 
 void handle_delete_user() {
-    // TODO: Implement your logic for deleting the current user here
     printf("You chose to delete the current user\n");
 }
 
@@ -216,8 +214,10 @@ void handle_help() {
     printf("Available commands:\n");
     printf("chat <username>  : Chat with a user.\n");
     printf("show users       : Show list of users.\n");
+    /*
     printf("add user         : Add a new user.\n");
     printf("delete user      : Delete the current account.\n");
+     */
 }
 
 
@@ -291,17 +291,17 @@ int main() {
                 }
             } else if (strcmp(cmd, "show") == 0 && arg && strcmp(arg, "users") == 0) {
                 handle_show_users();
-            } else if (strcmp(cmd, "add") == 0 && arg && strcmp(arg, "user") == 0) {
+            } /*else if (strcmp(cmd, "add") == 0 && arg && strcmp(arg, "user") == 0) {
                 handle_add_user();
             } else if (strcmp(cmd, "delete") == 0 && arg && strcmp(arg, "user") == 0) {
                 handle_delete_user();
             } else if (strcmp(cmd, "help") == 0) {
                 handle_help();
-            } else {
+            } */
+            else {
                 printf("Unknown command. Type 'help' for a list of commands.\n");
             }
         }
     }
-
 
 }

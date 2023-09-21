@@ -7,10 +7,10 @@ MYSQL *conn;
 MYSQL_STMT *stmt;
 
 int db_connect() {
-    const char *server = "127.0.0.1";
-    const char *user = "shibo";
-    const char *password = "djiinspire";
-    const char *database = "chaterminal";
+    const char *server = DB_SERVER_IP;
+    const char *user = DB_USERNAME;
+    const char *password = DB_PASSWORD;
+    const char *database = DB_NAME;
 
     conn = mysql_init(NULL);
 

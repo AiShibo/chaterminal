@@ -1,8 +1,14 @@
-include_directories(include)
+# Minimum CMake version required
+cmake_minimum_required(VERSION 3.22)
 
-# Find the ncurses package
-find_package(Curses REQUIRED)
-include_directories(${CURSES_INCLUDE_DIR})
+# Project name and language
+project(chaterminal C)
+
+# Set C standard to use
+set(CMAKE_C_STANDARD 11)
+
+
+include_directories(include)
 
 add_executable(chaterminal_client main.c
         service/server_connect_service.c
@@ -14,4 +20,4 @@ add_executable(chaterminal_client main.c
         callback/chat_cb.c)
 
 # Link the libraries
-target_link_libraries(chaterminal_client event ${CURSES_LIBRARIES})
+target_link_libraries(chaterminal_client event)
